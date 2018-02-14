@@ -47,6 +47,14 @@ sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Curre
     ```
         with the '/path/to/parrots/folder'
 
+- **[diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)** 
+    ```bash
+    # First, add the diff-so-fancy script to your PATH - (see /scripts/)
+    # Then => execute:
+    git config --global alias.dsf '!f() { [ -z "$GIT_PREFIX" ] || cd "$GIT_PREFIX" '\
+    '&& git diff --color "$@" | diff-so-fancy  | less --tabs=4 -RFX; }; f'
+    # Or check out the Repo for more usage instructions
+    ```
 - **colorls** (ruby) <br>
     `brew install ruby` <br>
     `sudo chown -R username:group ~/.gem` <br>
