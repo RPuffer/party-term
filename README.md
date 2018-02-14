@@ -55,7 +55,7 @@ sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Curre
     '&& git diff --color "$@" | diff-so-fancy  | less --tabs=4 -RFX; }; f'
     # Or check out the Repo for more usage instructions
     ```
-- **colorls** (ruby) <br>
+- **[colorls](https://github.com/athityakumar/colorls)** (ruby) <br>
     `brew install ruby` <br>
     `sudo chown -R username:group ~/.gem` <br>
     `gem install colorls`
