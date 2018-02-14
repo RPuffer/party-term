@@ -294,8 +294,6 @@ setopt AUTO_CD
 # Set alias for directories => ~g == ~/Git
 hash -d g=~/Git
 
-
-alias tfs="chrome 'http://tfsprod.nml.com:8080/tfs/NMCollection/ICO/Monsters%20Inc/_backlogs/taskboard?_a=requirements'"
 alias jdk="cd /Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home"
 alias jre="cd /Library/Internet\ Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/"
 alias keytool="/Library/Java/JavaVirtualMachines/jdk1.8.0_151.jdk/Contents/Home/bin/keytool"

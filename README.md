@@ -42,7 +42,6 @@ sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Curre
     ```
         with the '/path/to/parrots/folder'
 
-- **[chrome shortcut script](scripts/chrome)**
 - **colorls** (ruby) <br>
     `brew install ruby` <br>
     `sudo chown -R username:group ~/.gem` <br>
@@ -54,7 +53,7 @@ sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Curre
 - Optional wifi / battery segments (modify .zshrc)
 ```bash
     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status zsh_weather time custom_internet_signal zsh_battery_level)
-```
+``` 
 ![wifi-battery](img/wifi-battery.png)
 
 ### FONTS
