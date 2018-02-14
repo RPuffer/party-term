@@ -50,6 +50,13 @@ sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Curre
 - Create key-mapping in `Iterm2 > Preferences > Keys > Key Mappings` for ^[accept in (zsh-autosuggestion) <br><br>
 ![key-map](img/key-map.png)
 
+
+- Optional wifi / battery segments (modify .zshrc)
+```bash
+    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status zsh_weather time custom_internet_signal zsh_battery_level)
+```
+![wifi-battery](img/wifi-battery.png)
+
 ### FONTS
 - **USE FURA CODE NERD FONT** `13.5pt` (see /font/)
 - **USE LIGATURES**

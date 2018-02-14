@@ -104,16 +104,12 @@ prompt_zsh_party(){
 }
 prompt_zsh_weather(){
   local weather=$(curl -s "http://api.apixu.com/v1/current.json?key=<your-api-key>&q=<zip-code>")
-  # local condicon=$(echo $weather | jq .current.condition.icon | sed -e 's/^"//' -e 's/"$//')
   local temp=$(echo $weather | jq .current.temp_f)
   local feel=$(echo $weather | jq .current.feelslike_f)
   local condition=$(echo $weather | jq .current.condition.text)
   #Default value
   local color='%F{green}'
   local symbol="\uf2c7"
-  
-  # wget -q /Users/PUF1501/temp/weather/ 'http:${condicon}'
-  # local iconfile='/Users/PUF1501/temp/weather/'$(ls /Users/PUF1501/temp/weather/)
 
   if [[ $condition == *"rain"* ]] ;
   then symbol="\uf043" ; color='%F{blue}'
@@ -143,9 +139,7 @@ prompt_zsh_weather(){
   then symbol="\uf185" ; color='%F{yellow}';
   fi
 
-  # echo -n  ' '"%{$color%}$temp\u2103  $symbol "
   echo -n  "  %{%F{8}%}\ue0ba%{%K{8}%}"" %{%F{white}%}$feel˚F  %{$color%}$symbol "
-  # echo -n  "  %{%F{8}%}\ue0c2%{%K{8}%}"" %{%F{white}%}$feel˚F  %{$color%}$(list_file $iconfile) "
 }
 prompt_zsh_battery_level() {
     percentage=`pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';' | grep -oe '\([0-9.]*\)' | awk '{printf("%d", ($1 / 10))}'`
@@ -178,7 +172,6 @@ prompt_zsh_battery_level() {
       color='%F{blue}' ;
     fi
 
-    # echo -n "%{$color%}$symbol "'\e[30m''\e[47m''\ue0b4''  '
     echo -n "%{$color%}$symbol "'%{%F{8}%}''%{%K{white}%}''\ue0c0''  '
 }
 zsh_internet_signal(){
@@ -226,23 +219,17 @@ zsh_internet_signal(){
     then color='%F{blue}' ; symbol="\uf197" ;
   fi
 
-  # echo -n  '\e[47m''\e[30m''\ue0b6''\e[40m'' '"%{$color%}$symbol " # \f1eb is wifi bars
-  # echo -n  '\e[40m\e[37m|\uf284 \ue0b6''\e[47m''  \e[90m''\ue0c2''\e[100m'' '"%{$color%}$symbol " # \f1eb is wifi bars
   echo -n  '%{%K{black}%}%{%F{white}%}<|\ue0b6''%{%K{white}%}''  %{%F{8}%}''\ue0c2''%{%K{8}%}'' '"%{$color%}$symbol " # \f1eb is wifi bars
 }
 
 DISABLE_AUTO_TITLE="true"
 
 POWERLEVEL9K_DIR_PATH_SEPARATOR="%F{10}$(echo '\ue0bd ')%F{black}"
-# POWERLEVEL9K_DIR_PATH_SEPARATOR="%F{10}$(zsh_toggle)"
 
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD='0'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION='3'
-
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='14'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='10'
-
-POWERLEVEL9K_SHOW_CHANGESET='true'
 
 # VCS COLORS CUSTOMIZATION
 POWERLEVEL9K_VCS_CLEAN_FOREGROUND='14'
@@ -251,7 +238,8 @@ POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='black'
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='magenta'
 POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='white'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='8'
-# POWERLEVEL9K_VCS_GIT_ICON='\ue0a0'
+POWERLEVEL9K_VCS_GIT_GITLAB_ICON="\uF296 "
+POWERLEVEL9K_VCS_BRANCH_ICON="\uF296 "
 POWERLEVEL9K_VCS_GIT_ICON='\uf418'
 POWERLEVEL9K_VCS_GIT_GITHUB_ICON=''
 POWERLEVEL9K_VCS_STAGED_ICON='\u00b1'
@@ -262,68 +250,42 @@ POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\u2191'
 POWERLEVEL9K_RPROMPT_ON_NEWLINE='true'
 POWERLEVEL9K_CUSTOM_NEWLINE="echo -n '\n\n'"
 
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(zsh_party command_execution_time user dir vcs)
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(zsh_party user dir vcs)
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status zsh_weather time custom_internet_signal zsh_battery_level)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status zsh_weather time)
 
-POWERLEVEL9K_CUSTOM_OS_ICON="echo %{%F{blue}%}'\ue0b6''%{%K{blue}%}%{%F{black}%} \uF179' %{%K{black}%}%{%F{blue}%}'\ue0bc' "
-POWERLEVEL9K_CUSTOM_OS_ICON_BACKGROUND='black'
-POWERLEVEL9K_CUSTOM_OS_ICON_FOREGROUND='black'
-POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL="zsh_internet_signal"
-POWERLEVEL9K_CUSTOM_NODE_VERSION="echo '\ue718' $(node -v)" # '\ue0c8'"
-POWERLEVEL9K_CUSTOM_NODE_VERSION_FOREGROUND='green'
-POWERLEVEL9K_CUSTOM_NODE_VERSION_BACKGROUND='black'
-
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 
-# POWERLEVEL9K_SHORTEN_STRATEGY="truncate_middle"
+POWERLEVEL9K_CUSTOM_INTERNET_SIGNAL="zsh_internet_signal"
+
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_with_package_name"
-# POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
 POWERLEVEL9K_SHORTEN_DELIMITER=""
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
 
-# POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %I:%M \uf133 %h %d}"
 POWERLEVEL9K_TIME_FORMAT="%D{\uf017 %I:%M}" # SEARCH Strftime(3) for format codes
 
-# POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR="\ue0d2\uE0B5"
-#  POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR="\ue0b4\uf20e "
 # POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR="\ue0b4\uf168"                      # SAUSAGE LOOK!!!
 # POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR="\ue0b4 "                            # ROUNDED LOOK
 POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR="\ue0bc "                            # SLASH LOOK
 # POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR="\ue0c0 "                            # FIREEEE
-# POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR="\ue0c4\ue0c6\ue601 "
-
-# POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR="%F{white} \ue0CA\uE0C8 %f"
 POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR=""
-# POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=" \uE0CA" # ??
-# POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR="  \uE0C2" # FIRErrÆ
+
+# POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=" \uE0CA" # # SLIME LOOK RIGHT
+# POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR="  \uE0C2" # FIREEE LOOK RIGHT
 POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR="  \ue0ba"
-POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR="\ue0b3\ue0b3"
-POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR=""
+# POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR="\ue0b3\ue0b3" # DOUBLE ARROWS
+POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR="" 
 
-
-POWERLEVEL9K_VCS_GIT_GITLAB_ICON="\uF296 "
-POWERLEVEL9K_VCS_BRANCH_ICON="\uF296 "
-
-# POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{white}\ue0b6%f"
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{bold} \ue285\ue285 %f"
 
-#  - \ue205
-POWERLEVEL9K_APPLE_ICON="\uF179"
-
 POWERLEVEL9K_USER_ICON="%F{red}\uF1D0%f"
-
 POWERLEVEL9K_HOME_ICON='\uf015' # ACTUAL HOME ICON
 # POWERLEVEL9K_HOME_ICON='\uf0ac' # EARTH ICON
 POWERLEVEL9K_HOME_SUB_ICON='\ue5fe'
 POWERLEVEL9K_FOLDER_ICON='\ue615'
 
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
-
 bindkey '^[accept' autosuggest-accept
 
 # Automatically cd to if not a valid command
