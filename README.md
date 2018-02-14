@@ -8,6 +8,11 @@
 # PARTY-TERMINAL
 party parrot terminal config for 'oh-my-zsh'
 
+![parrot](parrots/angelparrot.gif) ![parrot](parrots/discoparrot.gif)
+![parrot](parrots/sithparrot.gif) ![parrot](parrots/party-wizard.gif)
+![parrot](parrots/dealwithitparrot.gif) ![parrot](parrots/jediparrot.gif)
+![parrot](parrots/nyanparrot.gif) ![parrot](parrots/revolutionparrot.gif)
+
 ![party-term](img/term-preview.png)
 ![party-term](img/term-preview2.png)
 
