@@ -322,7 +322,7 @@ alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder
 
 alias spacer="defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type='spacer-tile';}' && killall Dock"
 
-alias cp="pbcopy"
+alias cop="pbcopy"
 alias cdir="pwd | cp"
 
 source $(dirname $(gem which colorls))/tab_complete.sh
