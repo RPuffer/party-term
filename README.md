@@ -22,7 +22,7 @@ party parrot terminal config for 'oh-my-zsh'
 - **[iterm2](https://iterm2.com/documentation-images.html)**
 - **[oh-my-zsh](http://ohmyz.sh/)**
 - **[powerlevel9k](https://github.com/bhilburn/powerlevel9k#command_execution_time)**
-- **[imgcat](https://iterm2.com/documentation-images.html)** `# for party img display`
+- **[imgcat](https://iterm2.com/documentation-images.html)** `# for party img display | Iterm2 > Install Shell Integration`
 - **[apixu - for weather](https://www.apixu.com/)** *signup is FREE* <br>
     modify the line <br>`local weather=$(curl -s "http://api.apixu.com/v1/current.json?key=<your-api-key>&q=<zip-code>")`<br> in .zshrc
 - **jq**        
