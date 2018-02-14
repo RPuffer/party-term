@@ -14,7 +14,7 @@ party parrot terminal config for 'oh-my-zsh'
 
 # Dependencies
 
-- **iterm2**
+- **[iterm2](https://iterm2.com/documentation-images.html)**
 - **[oh-my-zsh](http://ohmyz.sh/)**
 - **[powerlevel9k](https://github.com/bhilburn/powerlevel9k#command_execution_time)**
 - **[imgcat](https://iterm2.com/documentation-images.html)** `# for party img display`
@@ -26,7 +26,7 @@ party parrot terminal config for 'oh-my-zsh'
     `brew install coreutils`
 - **airport** `# create symlink (below)`
 ```bash
-sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/sbin/airport
+sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
 ```
 
 # Not Necessarily Required
