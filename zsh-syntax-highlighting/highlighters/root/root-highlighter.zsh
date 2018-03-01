@@ -1,0 +1,1 @@
+../../../../Cellar/zsh-syntax-highlighting/0.6.0/share/zsh-syntax-highlighting/highlighters/root/root-highlighter.zsh
