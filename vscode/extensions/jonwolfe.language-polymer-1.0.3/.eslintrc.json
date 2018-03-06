@@ -1,0 +1,36 @@
+{
+	"env": {
+		"node": true
+	},
+	"extends": [ "eslint:recommended", "airbnb-base" ],
+	"plugins": [ "import" ],
+	"rules": {
+		"import/no-extraneous-dependencies": [ "error", { "devDependencies": true } ],
+
+		"array-bracket-spacing": [ "warn", "always" ],
+		"class-methods-use-this":  "off",
+		"computed-property-spacing": [ "warn", "always" ],
+		"global-require": "off",
+		"id-length": [ "error", { "min": 2, "exceptions": [ "e" ] } ],
+		"indent": [ "warn", "tab", { "SwitchCase": 1, "MemberExpression": 1 } ],
+		"lines-around-comment": [ "warn", { "afterBlockComment": true, "beforeLineComment": true, "allowBlockStart": true, "allowBlockEnd": true, "allowObjectStart": true, "allowObjectEnd": true, "allowArrayStart": true, "allowArrayEnd": true } ],
+		"max-len": "off",
+		"max-statements-per-line": [ "warn", { "max": 1 } ],
+		"new-cap": [ "warn", { "capIsNewExceptionPattern": "Polymer" } ],
+		"newline-after-var": [ "warn", "always" ],
+		"newline-before-return": "warn",
+		"newline-per-chained-call": [ "warn", { "ignoreChainWithDepth": 2 } ],
+		"no-console": "off",
+		"no-debugger": "off",
+		"no-extra-parens": [ "error", "all", { "nestedBinaryExpressions": false } ],
+		"no-multi-spaces": [ "warn", { "exceptions": { "Property": false } } ],
+		"no-multiple-empty-lines": [ "warn", { "max": 1, "maxBOF": 0, "maxEOF": 1 } ],
+		"no-param-reassign": "off",
+		"no-tabs": "off",
+		"no-underscore-dangle": [ "error", { "allowAfterThis": true } ],
+		"padded-blocks": "off",
+		"prefer-arrow-callback": "off",
+		"radix": "off",
+		"space-in-parens": [ "warn", "always" ]
+	}
+}

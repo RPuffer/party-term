@@ -1,0 +1,28 @@
+{
+	"name": "theme-toothpaste",
+	"displayName": "Toothpaste",
+	"description": "A custom theme with flavorful colors that pop and are muted where necessary.",
+	"version": "0.0.1",
+	"publisher": "aalaap",
+	"icon": "toothpaste.png",
+	"engines": {
+		"vscode": "^0.10.10"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Toothpaste",
+				"uiTheme": "vs-dark",
+				"path": "./themes/toothpaste.tmTheme"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "3cb04545-929c-46c5-88c2-073790d5f447",
+		"publisherId": "1eba1015-cabd-463b-9e00-cc0ed1f6e266",
+		"publisherDisplayName": "Aalaap Ghag"
+	}
+}

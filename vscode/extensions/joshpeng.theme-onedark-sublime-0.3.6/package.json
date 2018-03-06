@@ -1,0 +1,42 @@
+{
+	"name": "theme-onedark-sublime",
+	"displayName": "One Dark (Sublime Babel)",
+	"description": "Atom's One Dark theme with ES6/Babel support.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/joshpeng/One-Dark.git"
+	},
+	"version": "0.3.6",
+	"license": "MIT",
+	"publisher": "joshpeng",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"icon": "images/icon.png",
+	"galleryBanner": {
+		"color": "#44494f",
+		"theme": "dark"
+	},
+	"contributes": {
+		"themes": [
+			{
+				"label": "One Dark (Sublime)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/OneDark.tmTheme"
+			},
+			{
+				"label": "One Dark+ (Sublime)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/OneDark+.tmTheme"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "e8aa5629-b53b-4d40-b96d-05e07217742a",
+		"publisherId": "5301c829-08a8-4505-a5a0-c623ee1041cb",
+		"publisherDisplayName": "Josh Peng"
+	}
+}

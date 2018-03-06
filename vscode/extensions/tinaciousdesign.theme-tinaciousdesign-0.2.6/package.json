@@ -1,0 +1,33 @@
+{
+	"name": "theme-tinaciousdesign",
+	"displayName": "Theme-TinaciousDesign ",
+	"description": "A dark theme and a light theme with fun colours",
+	"version": "0.2.6",
+	"publisher": "tinaciousdesign",
+	"repository": "https://github.com/tinacious/vscode-tinacious-design-syntax",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Tinacious Design",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Tinacious-Design.tmTheme"
+			},
+			{
+				"label": "Tinacious Design (Light)",
+				"uiTheme": "vs",
+				"path": "./themes/Tinacious-Design-Light.tmTheme"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "2d7381e3-ca4b-430c-a6cf-0d8ee0643f64",
+		"publisherId": "55a40ffa-f322-44cf-b1a4-1736a36bde73",
+		"publisherDisplayName": "Tinacious Design"
+	}
+}

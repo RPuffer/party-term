@@ -1,0 +1,48 @@
+{
+	"name": "winteriscoming",
+	"displayName": "Winter is Coming Theme",
+	"description": "Preferred dark/light themes by John Papa",
+	"icon": "images/winteriscoming-icon.png",
+	"license": "SEE LICENSE IN LICENSE.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/johnpapa/vscode-winteriscoming.git"
+	},
+	"galleryBanner": {
+		"color": "#373436",
+		"theme": "dark"
+	},
+	"version": "0.5.0",
+	"publisher": "johnpapa",
+	"keywords": [
+		"Theme",
+		"Dark Theme",
+		"Light Theme"
+	],
+	"engines": {
+		"vscode": "^1.17.0"
+	},
+	"categories": [
+		"Themes",
+		"Other"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Winter is Coming (Dark)",
+				"uiTheme": "vs-dark",
+				"path": "./themes/WinterIsComing-dark-color-theme.json"
+			},
+			{
+				"label": "Winter is Coming (Light)",
+				"uiTheme": "vs",
+				"path": "./themes/WinterIsComing-light-color-theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "fd6d3dc6-b307-4589-82a6-78e2afec3d77",
+		"publisherId": "4434843a-4ebf-4f44-84f5-4176380c492d",
+		"publisherDisplayName": "John Papa"
+	}
+}

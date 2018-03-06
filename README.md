@@ -25,9 +25,9 @@ party parrot terminal config for 'oh-my-zsh'
 - **[imgcat](https://iterm2.com/documentation-images.html)** `# for party img display | Iterm2 > Install Shell Integration`
 - **[apixu - for weather](https://www.apixu.com/)** *signup is FREE* <br>
     modify the line <br>`local weather=$(curl -s "http://api.apixu.com/v1/current.json?key=<your-api-key>&q=<zip-code>")`<br> in .zshrc
-- **jq**        
+- **jq**
     `brew install jq`
-- **gshuf**     
+- **gshuf**
     `brew install coreutils`
 - **airport** `# create symlink (below)`
 ```bash
@@ -47,7 +47,7 @@ sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Curre
     ```
         with the '/path/to/parrots/folder'
 
-- **[diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)** 
+- **[diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)**
     ```bash
     # First, add the diff-so-fancy script to your PATH - (see /scripts/)
     # Then => execute:
@@ -66,7 +66,7 @@ sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Curre
 - Optional wifi / battery segments (modify .zshrc)
 ```bash
     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status zsh_weather time custom_internet_signal zsh_battery_level)
-``` 
+```
 ![wifi-battery](img/wifi-battery.png)
 
 ### FONTS
@@ -85,3 +85,14 @@ sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Curre
 ## Import [iterm colors](solarized-neon.itermcolors)
 
 ![iterm colors](img/term-colors.png)
+
+
+# VSCode Config - see vscode folder
+
+
+# Natural Text Editing
+
+## Goto Iterm2 > Preferences > Profiles > Keys
+## Select 'Load Preset' and choose 'Natural Text Editing'
+
+![iterm natural text edit](img/natural-text-edit.png)

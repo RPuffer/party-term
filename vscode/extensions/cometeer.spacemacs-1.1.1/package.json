@@ -1,0 +1,48 @@
+{
+	"name": "spacemacs",
+	"displayName": "Spacemacs",
+	"description": "Spacemacs themes for Visual Studio Code",
+	"version": "1.1.1",
+	"publisher": "cometeer",
+	"engines": {
+		"vscode": "^1.12.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Spacemacs - light",
+				"uiTheme": "vs",
+				"path": "./themes/Spacemacs-light-color-theme.json"
+			},
+			{
+				"label": "Spacemacs - dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Spacemacs-dark-color-theme.json"
+			}
+		]
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cometeer/spacemacs-vscode.git"
+	},
+	"keywords": [
+		"vs-code",
+		"theme",
+		"spacemacs"
+	],
+	"author": "cometeer",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/cometeer/spacemacs-vscode/issues"
+	},
+	"homepage": "https://github.com/cometeer/spacemacs-vscode#readme",
+	"icon": "assets/icon.png",
+	"__metadata": {
+		"id": "5377d680-e3f1-43bc-a2a8-0386b693b58b",
+		"publisherId": "676a77c3-4b25-4793-af44-32acc176c330",
+		"publisherDisplayName": "cometeer"
+	}
+}

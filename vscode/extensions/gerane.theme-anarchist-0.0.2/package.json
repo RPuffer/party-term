@@ -1,0 +1,33 @@
+{
+	"name": "Theme-Anarchist",
+	"displayName": "Anarchist Theme",
+	"description": "Anarchist Theme ported from the Anarchist TextMate Theme",
+	"version": "0.0.2",
+	"publisher": "gerane",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Themes"
+	],
+	"icon": "icon.png",
+	"homepage": "https://github.com/gerane/VSCodeThemes/blob/master/gerane.Theme-Anarchist/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gerane/VSCodeThemes.git"
+	},
+	"contributes": {
+		"themes": [
+			{
+				"label": "Anarchist",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Anarchist.tmTheme"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "1008a0c0-c7c7-4537-ae73-1af8b9c05ff4",
+		"publisherId": "a5c25faf-bf60-4941-81b9-9a852b96c5fb",
+		"publisherDisplayName": "gerane"
+	}
+}

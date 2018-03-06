@@ -1,0 +1,167 @@
+{
+	"name": "vscode-svgviewer",
+	"displayName": "SVG Viewer",
+	"description": "SVG Viewer for Visual Studio Code.",
+	"version": "1.4.3",
+	"publisher": "cssho",
+	"engines": {
+		"vscode": "^1.9.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:xml",
+		"onCommand:svgviewer.open",
+		"onCommand:svgviewer.openfile",
+		"onCommand:svgviewer.saveas",
+		"onCommand:svgviewer.saveassize",
+		"onCommand:svgviewer.copydui",
+		"onCommand:svgviewer.openexport",
+		"*"
+	],
+	"main": "./out/src/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "svgviewer.open",
+				"title": "SVG Viewer: View SVG",
+				"icon": {
+					"light": "./media/preview-darkgray.svg",
+					"dark": "./media/preview-lightgray.svg"
+				}
+			},
+			{
+				"command": "svgviewer.openfile",
+				"title": "SVG Viewer: View SVG File"
+			},
+			{
+				"command": "svgviewer.saveas",
+				"title": "SVG Viewer: Export PNG"
+			},
+			{
+				"command": "svgviewer.saveassize",
+				"title": "SVG Viewer: Export PNG explicitly set the size"
+			},
+			{
+				"command": "svgviewer.copydui",
+				"title": "SVG Viewer: Copy data URI scheme"
+			},
+			{
+				"command": "svgviewer.openexport",
+				"title": "SVG Viewer: (Experimental) Export PNG by Canvas"
+			}
+		],
+		"menus": {
+			"editor/title": [
+				{
+					"when": "resourceLangId == xml",
+					"command": "svgviewer.open",
+					"group": "navigation"
+				}
+			],
+			"explorer/context": [
+				{
+					"command": "svgviewer.openfile",
+					"group": "extension",
+					"when": "resourceLangId  == xml"
+				}
+			]
+		},
+		"keybindings": [
+			{
+				"command": "svgviewer.open",
+				"key": "alt+shift+s o"
+			},
+			{
+				"command": "svgviewer.saveas",
+				"key": "alt+shift+s e"
+			},
+			{
+				"command": "svgviewer.saveassize",
+				"key": "alt+shift+s x"
+			},
+			{
+				"command": "svgviewer.copydui",
+				"key": "alt+shift+s c"
+			},
+			{
+				"command": "svgviewer.openexport",
+				"key": "alt+shift+s v"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "VSCode SVG Viewer configuration",
+			"properties": {
+				"svgviewer.transparencygrid": {
+					"type": "boolean",
+					"default": true,
+					"description": "Show Transparency Grid"
+				},
+				"svgviewer.transparencycolor": {
+					"type": "string"
+				},
+				"svgviewer.enableautopreview": {
+					"type": "boolean",
+					"default": false,
+					"description": "Open or not open the preview screen automatically"
+				},
+				"svgviewer.previewcolumn": {
+					"type": "string",
+					"enum": [
+						"One",
+						"Two",
+						"Three"
+					],
+					"default": "Two",
+					"description": "How to open the screen (vscode.ViewColumn)"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "tsc -p ./",
+		"compile": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install"
+	},
+	"devDependencies": {
+		"@types/mocha": "2.2.39",
+		"@types/node": "^7.0.5",
+		"typescript": "^2.2.1",
+		"vscode": "^1.0.4"
+	},
+	"dependencies": {
+		"copy-paste": "^1.1.4",
+		"jquery": "^3.1.0",
+		"node-cmd": "^1.1.1",
+		"path": "^0.12.7",
+		"pn": "^1.0.0",
+		"svgexport": "^0.3.2",
+		"tmp": "0.0.28"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/cssho/vscode-svgviewer.git"
+	},
+	"license": "MIT",
+	"icon": "icon.png",
+	"galleryBanner": {
+		"color": "#93E4D5",
+		"theme": "light"
+	},
+	"bugs": {
+		"url": "https://github.com/cssho/vscode-svgviewer/issues"
+	},
+	"homepage": "https://github.com/cssho/vscode-svgviewer/blob/master/README.md",
+	"keywords": [
+		"svg",
+		"viewer",
+		"image"
+	],
+	"__metadata": {
+		"id": "6f5d4f30-67aa-4151-80c0-1bbe8ca5f9db",
+		"publisherId": "1dfd9e90-5113-4f41-bfad-a22f8288078e",
+		"publisherDisplayName": "cssho"
+	}
+}

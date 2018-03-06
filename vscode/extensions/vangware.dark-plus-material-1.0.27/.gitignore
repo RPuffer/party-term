@@ -1,0 +1,42 @@
+# OSX
+._*
+.apdisk
+.AppleDB
+.AppleDesktop
+.AppleDouble
+.DocumentRevisions-V100
+.DS_Store
+.fseventsd
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+Network Trash Folder
+Temporary Items
+
+# LINUX
+.directory
+.Trash-*
+*~
+
+# WINDOWS
+*.cab
+*.lnk
+*.msi
+*.msm
+*.msp
+$RECYCLE.BIN/
+Desktop.ini
+ehthumbs.db
+Thumbs.db
+
+# NODE
+*.log
+*.pid
+*.seed
+build
+logs
+node_modules
+npm-debug.log*
+pids

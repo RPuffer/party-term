@@ -1,0 +1,33 @@
+{
+	"name": "Theme-GhettoBerryBlast",
+	"displayName": "GhettoBerryBlast Theme",
+	"description": "GhettoBerryBlast Theme ported from the GhettoBerryBlast TextMate Theme",
+	"version": "0.0.2",
+	"publisher": "gerane",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Themes"
+	],
+	"icon": "icon.png",
+	"homepage": "https://github.com/gerane/VSCodeThemes/blob/master/gerane.Theme-GhettoBerryBlast/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gerane/VSCodeThemes.git"
+	},
+	"contributes": {
+		"themes": [
+			{
+				"label": "GhettoBerryBlast",
+				"uiTheme": "vs-dark",
+				"path": "./themes/GhettoBerryBlast.tmTheme"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "6d37d167-e928-4d02-ab58-9d1d387c2a91",
+		"publisherId": "a5c25faf-bf60-4941-81b9-9a852b96c5fb",
+		"publisherDisplayName": "gerane"
+	}
+}

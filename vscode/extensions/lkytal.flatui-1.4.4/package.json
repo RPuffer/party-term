@@ -1,0 +1,54 @@
+{
+	"name": "FlatUI",
+	"displayName": "FlatUI",
+	"description": "A flat style theme for vscode",
+	"version": "1.4.4",
+	"publisher": "lkytal",
+	"license": "CC-BY-NC-SA-4.0",
+	"engines": {
+		"vscode": "*"
+	},
+	"categories": [
+		"Themes"
+	],
+	"keywords": [
+		"theme",
+		"color-theme",
+		"flat",
+		"light",
+		"dark"
+	],
+	"homepage": "https://lkytal.github.io/vscode-theme-flatui",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/lkytal/vscode-theme-flatui.git"
+	},
+	"bugs": {
+		"url": "https://github.com/lkytal/vscode-theme-flatui/issues"
+	},
+	"icon": "icon.png",
+	"contributes": {
+		"themes": [
+			{
+				"label": "FlatUI",
+				"uiTheme": "vs",
+				"path": "./themes/flatUI.tmTheme"
+			},
+			{
+				"label": "FlatUI Immersed",
+				"uiTheme": "vs",
+				"path": "./themes/immersed.json"
+			},
+			{
+				"label": "FlatUI Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/flatDark.tmTheme"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "53ceb0a7-7e7a-4f26-a91d-084f3d714420",
+		"publisherId": "675457ed-0b91-461b-a1b3-da865bf32269",
+		"publisherDisplayName": "Kaiyuan Liu"
+	}
+}

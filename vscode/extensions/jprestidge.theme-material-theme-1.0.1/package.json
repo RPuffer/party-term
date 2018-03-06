@@ -1,0 +1,50 @@
+{
+	"name": "theme-material-theme",
+	"displayName": "Sublime Material Theme",
+	"description": "Port of the Material Theme for Sublime Text.",
+	"version": "1.0.1",
+	"publisher": "jprestidge",
+	"engines": {
+		"vscode": "^1.5.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"icon": "icon.png",
+	"homepage": "https://github.com/JarvisPrestidge/vscode-material-theme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/JarvisPrestidge/vscode-material-theme.git"
+	},
+	"bugs": {
+		"url": "https://github.com/JarvisPrestidge/vscode-material-theme/issues",
+		"email": "jarvisprestidge@gmail.com"
+	},
+	"license": "SEE LICENSE IN LICENSE.md",
+	"keywords": [
+		"sublime",
+		"material",
+		"theme",
+		"light",
+		"dark"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Sublime Material Theme - Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Material-Theme.tmTheme"
+			},
+			{
+				"label": "Sublime Material Theme - Light",
+				"uiTheme": "vs",
+				"path": "./themes/Material-Theme-Lighter.tmTheme"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "e96f7482-8e97-4155-8a7c-ad5fab4d8b2d",
+		"publisherId": "29a1eb27-2838-48b9-9cb4-a58eca5cee77",
+		"publisherDisplayName": "Jarvis Prestidge"
+	}
+}

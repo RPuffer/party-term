@@ -1,0 +1,67 @@
+{
+	"name": "fresh-material",
+	"displayName": "Fresh Material",
+	"description": "Easy on the eyes with a splash of flair inspired by Atom Material UI",
+	"version": "2.3.6",
+	"publisher": "2ndshift",
+	"engines": {
+		"vscode": "^1.12.0"
+	},
+	"icon": "images/icon.png",
+	"categories": [
+		"Themes"
+	],
+	"license": "https://github.com/ambidexterich/vscode-fresh-material#license",
+	"homepage": "https://github.com/ambidexterich/vscode-fresh-material",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ambidexterich/vscode-fresh-material.git"
+	},
+	"bugs": {
+		"url": "https://github.com/ambidexterich/vscode-fresh-material/issues"
+	},
+	"contributes": {
+		"themes": [
+			{
+				"label": "Fresh Material",
+				"uiTheme": "vs-dark",
+				"path": "./themes/fresh-material.json"
+			},
+			{
+				"label": "Fresh Material - Blue",
+				"uiTheme": "vs-dark",
+				"path": "./themes/fresh-material-blue.json"
+			},
+			{
+				"label": "Fresh Material - Green",
+				"uiTheme": "vs-dark",
+				"path": "./themes/fresh-material-green.json"
+			},
+			{
+				"label": "Fresh Material - Pink",
+				"uiTheme": "vs-dark",
+				"path": "./themes/fresh-material-pink.json"
+			},
+			{
+				"label": "Fresh Material - Red",
+				"uiTheme": "vs-dark",
+				"path": "./themes/fresh-material-red.json"
+			},
+			{
+				"label": "Fresh Material - Indigo",
+				"uiTheme": "vs-dark",
+				"path": "./themes/fresh-material-indigo.json"
+			},
+			{
+				"label": "Fresh Material - Cyan",
+				"uiTheme": "vs-dark",
+				"path": "./themes/fresh-material-cyan.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "dd13f358-6e55-46d1-961e-79ef6cf9221b",
+		"publisherId": "711ccf4d-a23e-4749-9ef5-135cbf6c9c10",
+		"publisherDisplayName": "Rich Hamburg"
+	}
+}

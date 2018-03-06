@@ -1,0 +1,45 @@
+{
+	"name": "birdybird",
+	"displayName": "Birdybird",
+	"description": "Another dark color theme with optimal contrasts",
+	"version": "2.0.0",
+	"publisher": "smokeyjoe",
+	"license": "CC0-1.0",
+	"engines": {
+		"vscode": "^1.12.0"
+	},
+	"keywords": [
+		"birdybird",
+		"dark",
+		"hopscotch"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/christian-vogel/Birdybird-Color-Theme.git"
+	},
+	"homepage": "https://github.com/christian-vogel/Birdybird-Color-Theme",
+	"bugs": {
+		"url": "https://github.com/christian-vogel/Birdybird-Color-Theme/issues"
+	},
+	"icon": "images/logo.jpg",
+	"galleryBanner": {
+		"color": "#F1F1F1"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Birdybird Color Theme",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Birdybird Color Theme-color-theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "975681b4-0747-411a-b7e0-b97d6945b446",
+		"publisherId": "47ec0542-ceda-4ea6-a942-9ab62902c0c6",
+		"publisherDisplayName": "Christian Vogel"
+	}
+}

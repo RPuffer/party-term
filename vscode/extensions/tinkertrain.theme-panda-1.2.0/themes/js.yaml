@@ -1,0 +1,42 @@
+# -----------------------------------------------------------------------------
+# JS
+# -----------------------------------------------------------------------------
+- scope: entity.name.type.class.js
+  settings:
+    foreground: _light-blue
+
+- scope: keyword.control.as.js
+  settings:
+    foreground: _light-pink
+
+- scope: keyword.control.from.js
+  settings:
+    foreground: _light-pink
+
+- scope: keyword.control.export.js
+  settings:
+    foreground: _purple
+
+- scope: variable.language.this.js
+  settings:
+    fontStyle: italic
+
+- scope: support.class.console.js
+  settings:
+    fontStyle: italic
+
+# - scope: variable.other.readwrite.alias.js.jsx
+#   settings:
+#     foreground: _contrast-gray
+
+# -----------------------------------------------------------------------------
+# JSX
+# -----------------------------------------------------------------------------
+- scope: entity.name.tag.js, support.class.component.js
+  settings:
+    foreground: _red
+
+- scope: variable.language.super.js
+  settings:
+    foreground: _blue
+

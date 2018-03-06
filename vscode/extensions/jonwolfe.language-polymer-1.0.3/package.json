@@ -1,0 +1,72 @@
+{
+	"name": "language-polymer",
+	"displayName": "Polymer Syntax",
+	"description": "Syntax Highlighting and theming for Polymer components",
+	"version": "1.0.3",
+	"author": "Jon Wolfe <@_JonWolfe>",
+	"publisher": "jonwolfe",
+	"license": "MIT",
+	"homepage": "https://marketplace.visualstudio.com/items?itemName=jonwolfe.language-polymer",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/jonathanwolfe/language-polymer.git"
+	},
+	"bugs": {
+		"url": "https://github.com/jonathanwolfe/language-polymer/issues"
+	},
+	"engines": {
+		"vscode": ">=1.13.0"
+	},
+	"extensionDependencies": [
+		"vscode.html"
+	],
+	"categories": [
+		"Languages",
+		"Themes"
+	],
+	"galleryBanner": {
+		"color": "#31775a",
+		"theme": "dark"
+	},
+	"icon": "logo.png",
+	"contributes": {
+		"languages": [
+			{
+				"id": "polymer",
+				"aliases": [
+					"Polymer",
+					"polymer"
+				],
+				"extensions": [
+					"ejs",
+					"htm",
+					"html",
+					"kit",
+					"shtml",
+					"tmpl",
+					"tpl",
+					"xhtml"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"language": "polymer",
+				"scopeName": "text.html.polymer",
+				"path": "./syntaxes/polymer-syntax.json"
+			}
+		],
+		"themes": [
+			{
+				"label": "Polymer Syntax Theme",
+				"uiTheme": "vs-dark",
+				"path": "./themes/polymer-theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "5a48d076-e0a9-406c-b349-d8260a51474b",
+		"publisherId": "70bd0f84-81b4-45df-9853-1677c21409f9",
+		"publisherDisplayName": "jonwolfe"
+	}
+}

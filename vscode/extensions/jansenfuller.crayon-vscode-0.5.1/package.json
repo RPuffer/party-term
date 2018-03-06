@@ -1,0 +1,28 @@
+{
+	"name": "crayon-vscode",
+	"displayName": "Crayon-VSCode",
+	"description": "Visual Studio Code translation of Dylan Araps \"crayon-vim\" vim color scheme",
+	"version": "0.5.1",
+	"publisher": "jansenfuller",
+	"engines": {
+		"vscode": "^1.10.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "crayon-vscode",
+				"uiTheme": "vs-dark",
+				"path": "./themes/crayon.tmTheme"
+			}
+		]
+	},
+	"icon": "icon/crayon_icon.png",
+	"__metadata": {
+		"id": "aa5e3184-bf1e-4bd0-8eae-0282b39247bd",
+		"publisherId": "61ac63a4-69dd-4256-9f93-5a9b15e11340",
+		"publisherDisplayName": "Jansen Fuller"
+	}
+}
