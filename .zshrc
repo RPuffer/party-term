@@ -61,7 +61,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git,
+  git
   zsh-autosuggestions
 )
 
@@ -148,7 +148,7 @@ prompt_zsh_battery_level() {
     if [ $(bc <<< "scale=2 ; $percentage<25") = '1' ];
         then symbol="\uf244" ; color='%F{red}' ;
     #Less than 25
-    fi  
+    fi
     if [ $(bc <<< "scale=2 ; $percentage>=25") = '1' ] && [ $(bc <<< "scale=2 ; $percentage<50") = '1' ];
         then symbol='\uf243' ; color='%F{red}' ;
     #25%
@@ -160,7 +160,7 @@ prompt_zsh_battery_level() {
     if [ $(bc <<< "scale=2 ; $percentage>=75") = '1' ] && [ $(bc <<< "scale=2 ; $percentage<100") = '1' ];
         then symbol="\uf241" ; color='%F{green}' ;
     #75%
-    fi  
+    fi
     if [ $(bc <<< "scale=2 ; $percentage>99") = '1' ];
         then symbol="\uf240" ; color='%F{blue}' ;
     #100%
@@ -186,36 +186,36 @@ zsh_internet_signal(){
   local symbol="\uf197"
 
   # Excellent Signal (5 bars)
-  if [[ ! -z "${signal// }" ]] && [[ $SNR -gt .40 ]] ; 
+  if [[ ! -z "${signal// }" ]] && [[ $SNR -gt .40 ]] ;
     then color='%F{blue}' ; symbol="\uf1eb" ;
   fi
 
   # Good Signal (3-4 bars)
-  if [[ ! -z "${signal// }" ]] && [[ ! $SNR -gt .40 ]] && [[ $SNR -gt .25 ]] ; 
+  if [[ ! -z "${signal// }" ]] && [[ ! $SNR -gt .40 ]] && [[ $SNR -gt .25 ]] ;
     then color='%F{green}' ; symbol="\uf1eb" ;
   fi
 
   # Low Signal (2 bars)
-  if [[ ! -z "${signal// }" ]] && [[ ! $SNR -gt .25 ]] && [[ $SNR -gt .15 ]] ; 
+  if [[ ! -z "${signal// }" ]] && [[ ! $SNR -gt .25 ]] && [[ $SNR -gt .15 ]] ;
     then color='%F{yellow}' ; symbol="\uf1eb" ;
   fi
 
   # Very Low Signal (1 bar)
-  if [[ ! -z "${signal// }" ]] && [[ ! $SNR -gt .15 ]] && [[ $SNR -gt .10 ]] ; 
+  if [[ ! -z "${signal// }" ]] && [[ ! $SNR -gt .15 ]] && [[ $SNR -gt .10 ]] ;
     then color='%F{red}' ; symbol="\uf1eb" ;
   fi
 
   # No Signal - No Internet
-  if [[ ! -z "${signal// }" ]] && [[ ! $SNR -gt .10 ]] ; 
+  if [[ ! -z "${signal// }" ]] && [[ ! $SNR -gt .10 ]] ;
     then color='%F{red}' ; symbol="\uf011";
   fi
 
-  if [[ -z "${signal// }" ]] && [[ "$net" -ne 200 ]] ; 
+  if [[ -z "${signal// }" ]] && [[ "$net" -ne 200 ]] ;
     then color='%F{red}' ; symbol="\uf011" ;
   fi
 
   # Ethernet Connection (no wifi, hardline)
-  if [[ -z "${signal// }" ]] && [[ "$net" -eq 200 ]] ; 
+  if [[ -z "${signal// }" ]] && [[ "$net" -eq 200 ]] ;
     then color='%F{blue}' ; symbol="\uf197" ;
   fi
 
@@ -274,7 +274,7 @@ POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR=""
 # POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR="  \uE0C2" # FIREEE LOOK RIGHT
 POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR="  \ue0ba"
 # POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR="\ue0b3\ue0b3" # DOUBLE ARROWS
-POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR="" 
+POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR=""
 
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{bold} \ue285\ue285 %f"
