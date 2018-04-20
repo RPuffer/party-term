@@ -34,7 +34,7 @@ party parrot terminal config for 'oh-my-zsh'
 sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport /usr/local/bin/airport
 ```
 
-# Not Necessarily Required
+# Optional Config
 **You may need to adjust the .zshrc file if not using the following**
 
 - **MODIFY .ZSHRC**
@@ -75,8 +75,14 @@ sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Curre
 
 # Plugins
 
+- **REQUIRES DOWNLOAD** [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md)
+- [osx](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/osx)
+- [emoji](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/emoji)
+- [encode64](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/encode64/encode64.plugin.zsh)
+- [sudo](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#sudo)
+- [urltools](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#urltools)
+- [web-search](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#web-search)
 
 
 

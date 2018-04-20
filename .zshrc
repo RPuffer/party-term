@@ -66,7 +66,6 @@ plugins=(
   osx
   emoji
   encode64
-  rand-quote
   sudo
   urltools
   web-search
