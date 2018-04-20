@@ -63,6 +63,13 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 plugins=(
   git
   zsh-autosuggestions
+  osx
+  emoji
+  encode64
+  rand-quote
+  sudo
+  urltools
+  web-search
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -96,6 +103,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+pe(){
+    echo $emoji[$1]
+}
 
 prompt_zsh_party(){
   local fname=$(ls '/Users/PUF1501/temp/termicon/parrots' | gshuf -n 1)
@@ -139,7 +150,8 @@ prompt_zsh_weather(){
   then symbol="\uf185" ; color='%F{yellow}';
   fi
 
-  echo -n  "  %{%F{8}%}\ue0ba%{%K{8}%}"" %{%F{white}%}$feel˚F  %{$color%}$symbol "
+  echo -n  "%{%F{8}%}\ue0ba %{%K{8}%} "" %{%F{white}%}$feel˚F  %{$color%}$symbol "
+
 }
 prompt_zsh_battery_level() {
     percentage=`pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';' | grep -oe '\([0-9.]*\)' | awk '{printf("%d", ($1 / 10))}'`
@@ -272,7 +284,7 @@ POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR=""
 
 # POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=" \uE0CA" # # SLIME LOOK RIGHT
 # POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR="  \uE0C2" # FIREEE LOOK RIGHT
-POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR="  \ue0ba"
+POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=" \ue0ba "
 # POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR="\ue0b3\ue0b3" # DOUBLE ARROWS
 POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR=""
 
@@ -316,6 +328,12 @@ alias t="touch"
 alias m="mkdir"
 alias zshcfg="code ~/.zshrc"
 alias emacplay="cd /usr/share/emacs/22.1/lisp/play"
+alias e="random_emoji"
+
+alias e64="encode64"
+alias d64="decode64"
+alias eurl="urlencode"
+alias durl="urldecode"
 
 alias show='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
 alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
@@ -323,7 +341,7 @@ alias hide='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder
 alias spacer="defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type='spacer-tile';}' && killall Dock"
 
 alias cop="pbcopy"
-alias cdir="pwd | cp"
+alias cdir="pwd | cop"
 
 source $(dirname $(gem which colorls))/tab_complete.sh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
