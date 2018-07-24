@@ -59,6 +59,8 @@ sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Curre
     `brew install ruby` <br>
     `sudo chown -R username:group ~/.gem` <br>
     `gem install colorls`
+
+    (*nix) if you run into issues creating the makefile try `sudo apt-get install build-essential dh-autoreconf`
 - Create key-mapping in `Iterm2 > Preferences > Keys > Key Mappings` for ^[accept in (zsh-autosuggestion) <br><br>
 ![key-map](img/key-map.png)
 
