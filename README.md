@@ -16,6 +16,19 @@ party parrot terminal config for 'oh-my-zsh'
 ![party-term](img/term-preview.png)
 ![party-term](img/term-preview2.png)
 
+## Update
+Added a `party` function in the zshcfg to allow for turning the parrots on or off.
+
+```bash
+# turn off party parrots
+> party -n
+
+# turn on party parrots
+> party -y 
+# or
+> party
+```
+
 
 # Dependencies
 
