@@ -35,7 +35,8 @@ Added a `party` function in the zshcfg to allow for turning the parrots on or of
 - **[iterm2](https://iterm2.com/documentation-images.html)**
 - **[oh-my-zsh](http://ohmyz.sh/)**
 - **[powerlevel9k](https://github.com/bhilburn/powerlevel9k#command_execution_time)**
-- **[imgcat](https://iterm2.com/documentation-images.html)** `# for party img display | Iterm2 > Install Shell Integration`
+- **[imgcat](https://iterm2.com/documentation-images.html)** `for party img display | Iterm2 > Install Shell Integration`
+- **[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)** need to clone into plugins folder
 - **[apixu - for weather](https://www.apixu.com/)** *signup is FREE* <br>
     modify the line <br>`local weather=$(curl -s "http://api.apixu.com/v1/current.json?key=<your-api-key>&q=<zip-code>")`<br> in .zshrc
 - **jq**
@@ -90,7 +91,7 @@ sudo ln -s /System/Library/PrivateFrameworks/Apple80211.framework/Versions/Curre
 
 # Plugins
 
-- **REQUIRES DOWNLOAD** [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - [osx](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/osx)
 - [emoji](https://github.com/robbyrussell/oh-my-zsh/tree/master/plugins/emoji)
