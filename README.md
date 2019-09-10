@@ -34,7 +34,7 @@ Added a `party` function in the zshcfg to allow for turning the parrots on or of
 
 - **[iterm2](https://iterm2.com/documentation-images.html)**
 - **[oh-my-zsh](http://ohmyz.sh/)**
-- **[powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k#installation)**
+- **[powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k/wiki/Install-Instructions#option-2-install-for-oh-my-zsh)**
 - **[imgcat](https://iterm2.com/documentation-images.html)** `for party img display | Iterm2 > Install Shell Integration`
 - **[zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#oh-my-zsh)** need to clone into plugins folder
 - **[apixu - for weather](https://www.apixu.com/)** *signup is FREE* <br>
