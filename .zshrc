@@ -35,7 +35,7 @@ POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='10'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(zsh_party user dir vcs)
 # POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user dir vcs)
 # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status zsh_weather time custom_internet_signal zsh_battery_level)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status zsh_weather time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time status time)
 
 POWERLEVEL9K_CUSTOM_OS_ICON="echo %{%F{blue}%}'\ue0b6''%{%K{blue}%}%{%F{black}%} \uF179' %{%K{black}%}%{%F{blue}%}'\ue0bc' "
 POWERLEVEL9K_CUSTOM_OS_ICON_BACKGROUND='black'
@@ -97,34 +97,39 @@ POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/PUF1501/.oh-my-zsh
+export ZSH="/Users/rynepuffer/.oh-my-zsh"
 
 POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
+# Uncomment the following line to use hyphen-insensitive completion.
+# Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -136,6 +141,8 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -145,19 +152,23 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
-# The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# You can set one of the optional three formats:
+# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
+# or set a custom format using the strftime function format specifications,
+# see 'man strftime' for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Which plugins would you like to load?
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  osx
+  macos
   emoji
   encode64
   rand-quote
@@ -168,8 +179,6 @@ plugins=(
   zsh-syntax-highlighting
   jsontools
 )
-
-
 
 source $ZSH/oh-my-zsh.sh
 
@@ -208,71 +217,11 @@ pe(){
 }
 
 prompt_zsh_party(){
-  local fname=$(ls '/Users/PUF1501/temp/termicon/parrots' | gshuf -n 1)
-  local img=$(imgcat '/Users/PUF1501/temp/termicon/parrots/'$fname)
-  echo -n $img'\n'
+  local fname=$(ls '/Users/rynepuffer/Git/party-term/parrots' | gshuf -n 1)
+  local img=$(/Users/rynepuffer/.iterm2/imgcat '/Users/rynepuffer/Git/party-term/parrots/'$fname)
+  echo -n '\n'$img
 }
-prompt_zsh_weather(){
-  local weather=$(curl --connect-timeout 2 -m 2 -f -s "http://api.apixu.com/v1/current.json?key=a556d7daf00d4282961172642180502&q=53132")
 
-  #Default value
-  local color='%F{white}'
-  local symbol="\uf128"
-
-  if [ -z "$weather" -a "$weather" != " " ]; then
-    echo -n  "%{%F{8}%}\ue0ba %{%K{8}%} "" %{%F{white}%}$feel˚F  %{$color%}$symbol ";
-    return
-  fi
-
-  # local condicon=$(echo $weather | jq .current.condition.icon | sed -e 's/^"//' -e 's/"$//')
-  local temp=$(echo $weather | jq .current.temp_f)
-  local feel=$(echo $weather | jq .current.feelslike_f)
-  local condition=$(echo $weather | jq .current.condition.text)
-
-
-  # wget -q /Users/PUF1501/temp/weather/ 'http:${condicon}'
-  # local iconfile='/Users/PUF1501/temp/weather/'$(ls /Users/PUF1501/temp/weather/)
-
-  if [[ $condition == *"rain"* ]] ;
-  then symbol="\uf043" ; color='%F{blue}'
-  fi
-
-  if [[ $condition == *"Mist"* || $condition == *"mist"* ]] ;
-  then symbol="\ue201" ; color='%F{blue}'
-  fi
-
-  if [[ $condition == *"drizzle"* ]] ;
-  then symbol="\ue31b" ; color='%F{blue}'
-  fi
-
-  if [[ $condition == *"Freezing drizzle"* || $condition == *"freezing drizzle"* || $condition == *"sleet"* ]] ;
-  then symbol="\ue31b" ; color='%F{16}'
-  fi
-
-  if [[ $condition == *"cloudy"* || $condition == *"Overcast"* ]] ;
-  then symbol="\uf0c2" ; color='%F{grey}';
-  fi
-
-  if [[ $condition == *"Partly cloudy"* ]] ;
-  then symbol="\ue21d" ; color="%F{grey}";
-  fi
-
-  if [[ $condition == *"snow"* || $condition == *"Snow"* ]] ;
-  then symbol="\uf2dc" ; color="%F{grey}";
-  fi
-
-  if [[ $condition == *"thunder"* || $condition == *"storm"* ]] ;
-  then symbol="\uf0e7" ; color="%F{yellow}";
-  fi
-
-  if [[ $condition == *"Sunny"* ]] ;
-  then symbol="\uf185" ; color='%F{yellow}';
-  fi
-
-  # echo -n  ' '"%{$color%}$temp\u2103  $symbol "
-  echo -n  "%{%F{8}%}\ue0ba %{%K{8}%} "" %{%F{white}%}$feel˚F  %{$color%}$symbol "
-  # echo -n  "  %{%F{8}%}\ue0c2%{%K{8}%}"" %{%F{white}%}$feel˚F  %{$color%}$(list_file $iconfile) "
-}
 prompt_zsh_battery_level() {
     percentage=`pmset -g batt | egrep "([0-9]+\%).*" -o --colour=auto | cut -f1 -d';' | grep -oe '\([0-9.]*\)' | awk '{printf("%d", ($1 / 10))}'`
     local color='%F{red}'
@@ -363,6 +312,8 @@ DISABLE_AUTO_TITLE="true"
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 
 bindkey '^[accept' autosuggest-accept
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
 
 # Automatically cd to if not a valid command
 setopt AUTO_CD
@@ -377,14 +328,14 @@ alias cl="clear"
 alias l="colorls"
 alias ll="l -la --sd"
 alias gbD="git branch -D"
-alias gpd="git push origin --delete"
+alias gpd="echo \"<lazy-password ;)>\" | cop && git push origin --delete"
 alias grp="gr prune origin"
 alias gc="git clone"
 alias gaa="git add ."
 alias gps="git push"
 alias gpl="git pull"
 alias gups="git pull --rebase --autostash" # quick rebase - stash changes
-alias gcm="git commit -m"
+alias gcm="echo \"<lazy-password ;)>\" | cop && git commit -m"
 alias gd="git dsf"
 alias gst="git status"
 alias gf="git fetch"
@@ -411,7 +362,10 @@ alias to64="pbpaste | encode64 | tee >(cop)"
 alias from64="pbpaste | decode64 | tee >(cop)"
 
 alias decode="pbpaste | d64 | gpg -d | cop"
-alias pass="echo \"XIZuCufmVfRmtOrj0+Q7hae8OKaDrc32Xta2Gg==\" | cop"
+alias pass="echo \"<lazy-password ;)>\" | cop"
+
+alias be="bundle exec"
+alias bes="bundle exec spring"
 
 alias spacer="defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type='spacer-tile';}' && killall Dock"
 
@@ -426,6 +380,10 @@ alias 2048="bash <(curl -s https://raw.githubusercontent.com/mydzor/bash2048/mas
 
 source $(dirname $(gem which colorls))/tab_complete.sh
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+eval "$(rbenv init -)"
+
+export GPG_TTY=$(tty)
 
 dstart() { docker build -t "$1" . --no-cache && docker run --name $1 -d -p 8080:8080 $1 && docker logs -f $1; }
 denter() { docker build -t "$1" . --no-cache && docker run --name $1 -d -p 8080:8080 $1 && docker exec -it $1 sh; }
