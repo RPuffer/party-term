@@ -597,7 +597,7 @@
 		"vscode.yaml"
 	],
 	"devDependencies": {
-		"vscode": "^1.0.0",
+		"vscode": "^1.1.37",
 		"typescript": "^2.1.5",
 		"@types/node": "^8.0.34",
 		"@types/keytar": "^4.0.1"
